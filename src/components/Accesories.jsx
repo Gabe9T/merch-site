@@ -1,4 +1,4 @@
-import Masterlist from "./MasterList/MasterList";
+import masterlist from "./MasterList/MasterList";
 
 const Accessories = () =>{
     <>

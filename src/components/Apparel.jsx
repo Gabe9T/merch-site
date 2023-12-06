@@ -1,12 +1,18 @@
 import Items from "./Items";
-import masterlist from "./MasterList/MasterList";
+import PropTypes from 'prop-types';
+// import masterlist from "./MasterList/MasterList";
 
 
-const Apparel = () => {
+const Apparel = (props) => {
     return (
         <>
-            <h2>Apparel</h2>
+            <p>{props.category}</p>
+            <p>{props.imgSrc}</p>
+            <p>{props.imgAlt}</p>
+            <p>{props.description}</p>
+            <p>{props.price}</p>
             {/* masterlist.map... */}
+            
             <Items
                 category="Apparel"
                 image="https://picsum.photos/200/300"
@@ -16,3 +22,17 @@ const Apparel = () => {
     )
 }
 export default Apparel;
+
+const ProduceList = (props) => {
+  return(
+      <React.Fragment>
+          <h2>{props.month}</h2>
+          <ul>{props.selection.map((produceItem) => {
+              return (
+              <li>{produceItem}</li>
+              );
+          })}
+          </ul>
+      </React.Fragment>
+  )
+}
