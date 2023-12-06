@@ -4,7 +4,7 @@ const Items = (props) => {
     return(
         <>
         <p>Category: {props.category}</p>
-        <img src={props.image}/>
+        <img src={props.imgSrc} alt={props.imgAlt}/>
         <p>Description: {props.description}</p>
         <p>Price: {props.price}</p>
         </>
@@ -13,7 +13,8 @@ const Items = (props) => {
 
 Items.propTypes = {
     category: PropTypes.string,
-    image: PropTypes.string,
+    imgSrc: PropTypes.string,
+    imgAlt: PropTypes.string,
     description: PropTypes.string,
     price: PropTypes.string
 }
