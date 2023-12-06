@@ -1,9 +1,8 @@
-
 function Nav() {
 return(
    <>
     <button id="homeBtn">Home</button>
-    {/* add onClick  */}
+    {/* add onclick  */}
     <button id="allItemsBtn">All Itmesh</button>
     <button id="apparelBtn">Apparel</button>
     <button id="vinylBtn">Vinyl</button>

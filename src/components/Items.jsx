@@ -7,6 +7,7 @@ const Items = (props) => {
         <img src={props.imgSrc} alt={props.imgAlt}/>
         <p>Description: {props.description}</p>
         <p>Price: {props.price}</p>
+        <p>Quantity: {props.qty}</p>
         </>
     )
 }
@@ -16,7 +17,8 @@ Items.propTypes = {
     imgSrc: PropTypes.string,
     imgAlt: PropTypes.string,
     description: PropTypes.string,
-    price: PropTypes.string
+    price: PropTypes.string,
+    qty: PropTypes.number
 }
 
 export default Items;

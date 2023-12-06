@@ -1,10 +1,11 @@
-const masterlist = [
+const masterList = [
     {
         category: "Apparel",
         imgSrc: "https://picsum.photos/200/300",
         imgAlt: "A Picture",
         description: "Shirt",
         price: "$15.00",
+        qty: 5,
 
     },
     {
@@ -13,6 +14,7 @@ const masterlist = [
         imgAlt: "A Picture",
         description: "Shirt",
         price: "$15.00",
+        qty: 10,
 
     },
     {
@@ -21,6 +23,7 @@ const masterlist = [
         imgAlt: "A Picture",
         description: "Record",
         price: "$35.00",
+        qty: 7,
 
     },
     {
@@ -29,6 +32,7 @@ const masterlist = [
         imgAlt: "A Picture",
         description: "Record",
         price: "$35.00",
+        qty: 1,
 
     },
     {
@@ -37,7 +41,7 @@ const masterlist = [
         imgAlt: "A Picture",
         description: "Print",
         price: "$10.00",
-
+        qty: 50,
     },
     {
         category: "Digital",
@@ -45,6 +49,7 @@ const masterlist = [
         imgAlt: "A Picture",
         description: "Print",
         price: "$10.00",
+        qty: 20,
 
     },
     {
@@ -53,6 +58,7 @@ const masterlist = [
         imgAlt: "A Picture",
         description: "Key Chain",
         price: "$5.00",
+        qty: 5,
 
     },
     {
@@ -61,8 +67,9 @@ const masterlist = [
         imgAlt: "A Picture",
         description: "Key Chain",
         price: "$5.00",
+        qty: 5,
 
     }
 
 ];
-export default masterlist;
+export default masterList;

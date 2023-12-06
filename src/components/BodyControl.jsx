@@ -1,7 +1,4 @@
-import Apparel from "./Apparel";
-import Vinyl from "./Vinyl";
-import Digital from "./Digital";
-import Accesories from "./Accesories";
+import ItemsList from "./itemsList"
 
 // need to turn to class with state for visitiblity of nav options
 
@@ -9,10 +6,10 @@ const BodyControl = () => {
 
     return (
         <>
-            <Apparel />
-            <Vinyl />
-            <Digital />
-            <Accesories />
+            <ItemsList filter={"Apparel"}/>
+            <ItemsList filter={"Vinyl"}/>
+            <ItemsList filter={"Digital"}/>
+            <ItemsList filter={"Accesories"}/>
         </>
     )
 }
