@@ -15,7 +15,7 @@ function Header() {
             <title>Site</title>
             <h1>🐌Rage Against The Slug🐌</h1>
             <div style={styleHeader}>
-            <button id="navBtn" onclick='<Nav />'>☰</button> {/*add onClick for Nav Component */  }
+            <button id="navBtn" >☰</button> {/*add onClick for Nav Component onclick='<Nav />' */  }
             <form id="searchForm"  name="searchForm">
                 <input type="text" name="searchForm" placeholder="search"></input>
                 <button>Search for merch 🔍</button> {/*add onClick later */}
