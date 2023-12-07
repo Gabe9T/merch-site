@@ -8,6 +8,8 @@ const Items = (props) => {
         <p>Description: {props.description}</p>
         <p>Price: {props.price}</p>
         <p>Quantity: {props.qty}</p>
+        <button>Buy</button> 
+        <button>Restock</button>
         </>
     )
 }
