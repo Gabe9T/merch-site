@@ -8,9 +8,9 @@ function NewItemForm(props) {
         props.onNewItemCreation({
             imgSrc: e.target.image.value,
             description: e.target.description.value,
-            price: (e.target.price.value), //no need b/c input is num ?parseINT
-            qty: (e.target.qty.value), //parseINT
-            id: v4()
+            price: e.target.price.value,
+            qty: parseInt(e.target.qty.value), //this is an OBJ???
+            id: v4(),
         });
     }
     return (
@@ -34,12 +34,12 @@ function NewItemForm(props) {
 
                 <label htmlFor="price"> Price: </label>
                 <input
-                    type='number'
+                    type='text'
                     name='price'
                     placeholder='Price' />
 
                 <br />
-                <label htmlFor="qty"> Quanity: </label>
+                <label htmlFor="qty"> Quantity: </label>
                 <input
                     type='number'
                     name='qty'

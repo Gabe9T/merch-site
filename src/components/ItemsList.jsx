@@ -15,7 +15,7 @@ const ItemsList = (props) => {
     if (props.filter) {
         currentInventory = props.inventory.filter(item => item.category === props.filter);
     } 
-    console.log(props);
+    // console.log(props);
     return (
         <>
             <div className="row">
@@ -29,6 +29,7 @@ const ItemsList = (props) => {
                             description={item.description}
                             price={item.price}
                             qty={item.qty}
+                            
                             key={index} />)
                         )
                     }

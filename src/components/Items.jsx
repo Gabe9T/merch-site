@@ -8,6 +8,7 @@ const Items = (props) => {
         <p>Description: {props.description}</p>
         <p>Price: {props.price}</p>
         <p>Quantity: {props.qty}</p>
+        {/* <p>Id: {props.id}</p> */}
         <button>Buy</button> 
         <button>Restock</button>
         </>
@@ -20,7 +21,8 @@ Items.propTypes = {
     imgAlt: PropTypes.string,
     description: PropTypes.string,
     price: PropTypes.string,
-    qty: PropTypes.number
+    qty: PropTypes.number,
+    // id: PropTypes.number
 }
 
 export default Items;
