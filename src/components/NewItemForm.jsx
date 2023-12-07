@@ -1,11 +1,17 @@
-function NewItemForm() {
+import PropTypes from 'prop-types';
+// import { v4 } from 'uuid';
+
+function NewItemForm(props) {
+
     function handleNewItemFormSubmission(e) {
         e.preventDefault();
-        console.log(e.target.image.value);
-        console.log(e.target.description.value);
-        console.log(e.target.price.value);
-        console.log(e.target.qty.value);
-  
+        props.onNewItemCreation({
+            imgSrc: e.target.image.value,
+            description: e.target.description.value,
+            price: (e.target.price.value), //parseINT
+            qty: (e.target.qty.value), //parseINT
+            // id: v4()
+        });
     }
     return (
         <>
@@ -24,36 +30,33 @@ function NewItemForm() {
                     type='text'
                     name='description'
                     placeholder='Describe Item' />
-                    <br />
-                
-                <label htmlFor = "price"> Price: </label>
+                <br />
+
+                <label htmlFor="price"> Price: </label>
                 <input
                     type='number'
                     name='price'
-                    placeholder='Price'/>
-                    
-                    <br />
-                    <label htmlFor = "qty"> Quanity: </label>
-                    <input
+                    placeholder='Price' />
+
+                <br />
+                <label htmlFor="qty"> Quanity: </label>
+                <input
                     type='number'
                     name='qty'
-                    placeholder='Enter the amount'/>
-                    
-                    <br />
-                    
+                    placeholder='Enter the amount' />
+
+                <br />
+
 
                 <button type='submit'>Create!</button>
             </form>
         </>
     );
 }
+NewItemForm.propTypes = {
+    onNewItemCreation: PropTypes.func
+};
 
 export default NewItemForm;
 
 
-// category: "Apparel",
-//         imgSrc: "https://picsum.photos/200/300",
-//         imgAlt: "A Picture",
-//         description: "Shirt",
-//         price: "$15.00",
-//         qty: 5,

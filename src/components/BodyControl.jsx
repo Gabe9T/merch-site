@@ -1,10 +1,8 @@
 import ItemsList from "./itemsList";
 import React from 'react';
 import NewItemForm from "./NewItemForm";
-//import { useState } from "react";
+import { useState } from "react";
 import masterList from "./MasterList/MasterList";
-
-//declare useState somewhere?
 
 class BodyControl extends React.Component {
     constructor(props) {
@@ -19,17 +17,24 @@ class BodyControl extends React.Component {
             formVisibleOnPage: !prevState.formVisibleOnPage
         }));
     }
+    handleNewItem = (newItem) => {
+        const newInventory = this.state.mainNewItemList.concat(newItem);
+        this.setState({
+            mainNewItemList: newInventory,
+            formVisibleOnPage: false
+        });
+    }
+
     render() {
         let currentlyVisibleState = null;
         let buttonText = null;
         if (this.state.formVisibleOnPage) {
-            currentlyVisibleState = <NewItemForm />;
+            currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleNewItem}/>;
             buttonText = "Return to inventory for sale";
         } else {
             currentlyVisibleState =
                 <ItemsList
-                    inventory ={this.state.mainNewItemList}
-                    />;  //filter={"Apparel"}
+                    inventory={this.state.mainNewItemList} />;  //filter={"Apparel"}
             buttonText = "Add New Item";
         }
         // if (this.state.itemVisibleOnPage === 'home') {
