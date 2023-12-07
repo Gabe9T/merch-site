@@ -1,37 +1,39 @@
 function NewItemForm() {
     function handleNewItemFormSubmission(e) {
         e.preventDefault();
-        console.log(e.target.names.value);
-        console.log(e.target.location.value);
-        console.log(e.target.issue.value);
+        console.log(e.target.image.value);
+        console.log(e.target.description.value);
+        console.log(e.target.price.value);
+        console.log(e.target.qty.value);
+  
     }
     return (
         <>
             <h3>Use this form to add an item for sale</h3>
             <form onSubmit={handleNewItemFormSubmission}>
 
-                <label for="image">Image: </label>
+                <label htmlFor="image">Image: </label>
                 <input
                     type='text'
                     name='image'
                     placeholder='Image url here' />
                 <br />
 
-                <label for="description">Description: </label>
+                <label htmlFor="description">Description: </label>
                 <input
                     type='text'
                     name='description'
                     placeholder='Describe Item' />
                     <br />
                 
-                <label for = "price"> Price: </label>
+                <label htmlFor = "price"> Price: </label>
                 <input
                     type='number'
                     name='price'
                     placeholder='Price'/>
                     
                     <br />
-                    <label for = "qty"> Quanity: </label>
+                    <label htmlFor = "qty"> Quanity: </label>
                     <input
                     type='number'
                     name='qty'

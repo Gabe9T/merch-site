@@ -3,20 +3,24 @@ import PropTypes from 'prop-types';
 import masterList from "./MasterList/MasterList";
 
 const ItemsList = (props) => {
+    
     const itemStyle = {
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'wrap',
         width: '30%'
     }
-
-    const filteredList = masterList.filter(item => item.category === props.filter);
+    let inventory = props.inventory;
+    if (props.filter) {
+        inventory = props.inventory.filter(item => item.category === props.filter);
+    } 
+    console.log(props);
     return (
         <>
             <div className="row">
                 <div style={itemStyle}>
                     {
-                        filteredList.map((item, index) => (<Items
+                        inventory.map((item, index) => (<Items
                             category={item.category}
                             imgSrc={item.imgSrc}
                             imgAlt={item.imgAlt}
@@ -26,7 +30,6 @@ const ItemsList = (props) => {
                             key={index}
                         />)
                         )
-
                     }
                 </div>
             </div>
