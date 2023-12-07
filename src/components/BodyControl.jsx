@@ -14,16 +14,18 @@ class BodyControl extends React.Component {
         };
     }
     handleClick = () => {
-        this.setState({formVisibleOnPage: true})
+        this.setState(prevState => ({
+            formVisibleOnPage: !prevState.formVisibleOnPage}));
     }
     render(){
         let currentlyVisibleState = null;
-        let addItemButton = null;
+        let buttonText = null;
         if (this.state.formVisibleOnPage) {
-            currentlyVisibleState = <NewItemForm />
+            currentlyVisibleState = <NewItemForm />;
+            buttonText = "Return to inventory for sale";
         } else {
-            currentlyVisibleState = <ItemsList filter={"Apparel"}/>
-            addItemButton= <button onClick={this.handleClick}>Add Item to Store</button>
+            currentlyVisibleState = <ItemsList filter={"Apparel"}/>;
+            buttonText = "Add New Item";
         }
         // if (this.state.itemVisibleOnPage === 'home') {
         //     currentlyVisibleState = <ItemsList />
@@ -39,7 +41,7 @@ class BodyControl extends React.Component {
     return (
         <>
              {currentlyVisibleState}
-             {addItemButton}
+             <button onClick={this.handleClick}>{buttonText}</button>
         </>
     );
 }
