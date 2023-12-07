@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import ReusableForm from './ReusableForm';
 
 function NewItemForm(props) {
 
@@ -15,41 +16,10 @@ function NewItemForm(props) {
     }
     return (
         <>
-            <h3>Use this form to add an item for sale</h3>
-            <form onSubmit={handleNewItemFormSubmission}>
-
-                <label htmlFor="image">Image: </label>
-                <input
-                    type='text'
-                    name='image'
-                    placeholder='Image url here' />
-                <br />
-
-                <label htmlFor="description">Description: </label>
-                <input
-                    type='text'
-                    name='description'
-                    placeholder='Describe Item' />
-                <br />
-
-                <label htmlFor="price"> Price: </label>
-                <input
-                    type='text'
-                    name='price'
-                    placeholder='Price' />
-
-                <br />
-                <label htmlFor="qty"> Quantity: </label>
-                <input
-                    type='number'
-                    name='qty'
-                    placeholder='Enter the amount' />
-
-                <br />
-
-
-                <button type='submit'>Create!</button>
-            </form>
+        <ReusableForm
+            pageTitle="Use this form to add an item for sale"
+            formSubmissionHandler={handleNewItemFormSubmission}
+            buttonText="Create new item" />
         </>
     );
 }
