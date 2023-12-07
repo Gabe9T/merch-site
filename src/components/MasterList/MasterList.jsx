@@ -7,7 +7,7 @@ const masterList = [
         description: "Shirt",
         price: "$15.00",
         qty: 5,
-        id: 1,
+        id: '1',
     },
     {
         category: "Apparel",
@@ -16,7 +16,7 @@ const masterList = [
         description: "Shirt",
         price: "$15.00",
         qty: 10,
-        id: 2,
+        id: '2',
     },
     {
         category: "Vinyl",
@@ -25,7 +25,7 @@ const masterList = [
         description: "Record",
         price: "$35.00",
         qty: 7,
-        id: 3,
+        id: '3',
     },
     {
         category: "Vinyl",
@@ -34,7 +34,7 @@ const masterList = [
         description: "Record",
         price: "$35.00",
         qty: 1,
-        id: 4,
+        id: '4',
     },
     {
         category: "Digital",
@@ -43,7 +43,7 @@ const masterList = [
         description: "Print",
         price: "$10.00",
         qty: 50,
-        id: 5,
+        id: '5',
     },
     {
         category: "Digital",
@@ -52,7 +52,7 @@ const masterList = [
         description: "Print",
         price: "$10.00",
         qty: 20,
-        id: 6,
+        id: '6',
     },
     {
         category: "Accessories",
@@ -61,7 +61,7 @@ const masterList = [
         description: "Key Chain",
         price: "$5.00",
         qty: 5,
-        id: 7,
+        id: '7',
     },
     {
         category: "Accessories",
@@ -70,7 +70,7 @@ const masterList = [
         description: "Key Chain",
         price: "$5.00",
         qty: 5,
-        id: 8,
+        id: '8',
     }
 
 ];

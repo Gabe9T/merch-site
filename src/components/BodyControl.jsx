@@ -3,19 +3,29 @@ import React from 'react';
 import NewItemForm from "./NewItemForm";
 import { useState } from "react";
 import masterList from "./MasterList/MasterList";
+import ItemDetail from "./ItemDetail";
 
 class BodyControl extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             formVisibleOnPage: false,
-            mainNewItemList: masterList
+            mainNewItemList: masterList,
+            selectedItem: null
         };
     }
     handleClick = () => {
-        this.setState(prevState => ({
-            formVisibleOnPage: !prevState.formVisibleOnPage
-        }));
+        if (this.state.selectedItem != null) {
+            this.setState({
+                formVisibleOnPage: false,
+                selectedItem: null
+            });
+        } else {
+            this.setState(prevState => ({
+                formVisibleOnPage: !prevState.formVisibleOnPage
+            }));
+        }
+        
     }
     handleNewItem = (newItem) => {
         const newInventory = this.state.mainNewItemList.concat(newItem);
@@ -24,17 +34,25 @@ class BodyControl extends React.Component {
             formVisibleOnPage: false
         });
     }
-
+    //
+    handleChangingSelectedItem = (id) => {
+        const selectedItem = this.state.mainNewItemList.filter(item => item.id === id)[0];
+        this.setState({ selectedItem: selectedItem });
+    }
     render() {
         let currentlyVisibleState = null;
         let buttonText = null;
-        if (this.state.formVisibleOnPage) {
-            currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleNewItem}/>;
+
+        if (this.state.selectedItem != null) {
+            currentlyVisibleState = <ItemDetail item = {this.state.selectedItem} />
+            buttonText="Return to items for sale";
+        }else if (this.state.formVisibleOnPage) {
+            currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleNewItem} />;
             buttonText = "Return to inventory for sale";
         } else {
             currentlyVisibleState =
                 <ItemsList
-                    inventory={this.state.mainNewItemList} />;  //filter={"Apparel"}
+                    inventory={this.state.mainNewItemList}  onItemSelection={this.handleChangingSelectedItem}/>;  //filter={"Apparel"}
             buttonText = "Add New Item";
         }
         // if (this.state.itemVisibleOnPage === 'home') {

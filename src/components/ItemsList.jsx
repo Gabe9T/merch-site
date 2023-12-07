@@ -18,19 +18,22 @@ const ItemsList = (props) => {
     // console.log(props);
     return (
         <>
+        <hr />
             <div className="row">
                 <div style={itemStyle}>
                     {
-                        currentInventory.map((item, index) => 
+                        currentInventory.map((item) => 
                         (<Items
+                            whenItemClicked = { props.onItemSelection }
                             category={item.category}
                             imgSrc={item.imgSrc}
                             imgAlt={item.imgAlt}
                             description={item.description}
                             price={item.price}
                             qty={item.qty}
-                            
-                            key={index} />)
+                            id={item.id}
+                            key={item.id} />
+                            )
                         )
                     }
                 </div>
@@ -40,7 +43,8 @@ const ItemsList = (props) => {
 };
 
 ItemsList.propTypes = {
-    currentInventory: PropTypes.array
+    currentInventory: PropTypes.array,
+    onItemSelection: PropTypes.func
 };
 
 export default ItemsList;
