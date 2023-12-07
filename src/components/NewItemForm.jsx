@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-// import { v4 } from 'uuid';
+import { v4 } from 'uuid';
 
 function NewItemForm(props) {
 
@@ -8,9 +8,9 @@ function NewItemForm(props) {
         props.onNewItemCreation({
             imgSrc: e.target.image.value,
             description: e.target.description.value,
-            price: (e.target.price.value), //parseINT
+            price: (e.target.price.value), //no need b/c input is num ?parseINT
             qty: (e.target.qty.value), //parseINT
-            // id: v4()
+            id: v4()
         });
     }
     return (
