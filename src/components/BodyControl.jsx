@@ -25,7 +25,7 @@ class BodyControl extends React.Component {
                 formVisibleOnPage: !prevState.formVisibleOnPage
             }));
         }
-        
+
     }
     handleNewItem = (newItem) => {
         const newInventory = this.state.mainNewItemList.concat(newItem);
@@ -38,21 +38,29 @@ class BodyControl extends React.Component {
     handleChangingSelectedItem = (id) => {
         const selectedItem = this.state.mainNewItemList.filter(item => item.id === id)[0];
         this.setState({ selectedItem: selectedItem });
+
+    }
+    handleDeletingItem = (id) => {
+        const newItemList = this.state.mainNewItemList.filter(item => item.id !== id);
+        this.setState({
+            mainNewItemList: newItemList,
+            selectedItem: null
+    });
     }
     render() {
         let currentlyVisibleState = null;
         let buttonText = null;
 
         if (this.state.selectedItem != null) {
-            currentlyVisibleState = <ItemDetail item = {this.state.selectedItem} />
-            buttonText="Return to items for sale";
-        }else if (this.state.formVisibleOnPage) {
+            currentlyVisibleState = <ItemDetail item={this.state.selectedItem} onClickingDelete = {this.handleDeletingItem} />
+            buttonText = "Return to items for sale";
+        } else if (this.state.formVisibleOnPage) {
             currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleNewItem} />;
             buttonText = "Return to inventory for sale";
         } else {
             currentlyVisibleState =
                 <ItemsList
-                    inventory={this.state.mainNewItemList}  onItemSelection={this.handleChangingSelectedItem}/>;  //filter={"Apparel"}
+                    inventory={this.state.mainNewItemList} onItemSelection={this.handleChangingSelectedItem} />;  //filter={"Apparel"}
             buttonText = "Add New Item";
         }
         // if (this.state.itemVisibleOnPage === 'home') {

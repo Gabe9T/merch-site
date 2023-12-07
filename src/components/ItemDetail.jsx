@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function ItemDetail(props) {
-    const { item } = props;
+    const { item, onClickingDelete } = props;
     const styleImg = {
         width: '20rem',
         height: '20rem'
@@ -14,13 +14,15 @@ function ItemDetail(props) {
             <p>Description: {item.description}</p>
             <p>Price: {item.price}</p>
             <p>Quantity: {item.qty}</p>
+            <button onClick={()=> onClickingDelete(item.id) }>Delete Item</button>
             <hr />
         </>
 
     );
 }
 ItemDetail.propTypes = {
-    item: PropTypes.object
+    item: PropTypes.object,
+    onClickingDelete: PropTypes.func
 };
 
 export default ItemDetail;
