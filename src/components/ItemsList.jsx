@@ -6,9 +6,9 @@ const ItemsList = (props) => {
     
     const itemStyle = {
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         flexWrap: 'wrap',
-        width: '30%'
+        justifyContent: 'space-evenly',
     }
 
     let currentInventory = props.inventory;
@@ -19,7 +19,7 @@ const ItemsList = (props) => {
     return (
         <>
         <hr />
-            <div className="row">
+            
                 <div style={itemStyle}>
                     {
                         currentInventory.map((item) => 
@@ -37,7 +37,7 @@ const ItemsList = (props) => {
                         )
                     }
                 </div>
-            </div>
+            
         </>
     )
 };

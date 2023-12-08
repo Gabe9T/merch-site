@@ -9,6 +9,7 @@ function ItemDetail(props) {
     }
     return (
         <>
+        
             <h1>Ticket Detail</h1>
             <img src={item.imgSrc} alt={item.imgAlt} style={styleImg} />
             <p>Description: {item.description}</p>
@@ -17,6 +18,7 @@ function ItemDetail(props) {
             <button onClick={ props.onClickingEdit }>Update Item</button> {/*item or props? */}
             <button onClick={() => onClickingDelete(item.id) }>Delete Item</button>
             <hr />
+        
         </>
 
     );

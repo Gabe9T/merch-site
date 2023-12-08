@@ -7,7 +7,8 @@ function Header() {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        textAlign: 'center'
     }
     function handleNavClick() {
         console.log("handleNavClick reached");
