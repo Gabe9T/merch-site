@@ -10,7 +10,7 @@ function NewItemForm(props) {
             imgSrc: e.target.image.value,
             description: e.target.description.value,
             price: e.target.price.value,
-            qty: parseInt(e.target.qty.value), //this is an OBJ???
+            qty: parseInt(e.target.qty.value), 
             id: v4(),
         });
     }
